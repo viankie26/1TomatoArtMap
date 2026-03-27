@@ -30,6 +30,8 @@ interface PendingLocation {
   city: string;
   country: string;
   continent: string;
+  preserveDisplayNames?: boolean;
+  preserveLocationLabel?: boolean;
 }
 
 interface StartupLocationModalProps {
@@ -75,6 +77,44 @@ export default function StartupLocationModal({
           displayCity: DEFAULT_CITY,
           displayCountry: DEFAULT_COUNTRY,
           displayContinent: DEFAULT_CONTINENT,
+        },
+      });
+      return;
+    }
+
+    if (location.preserveDisplayNames || location.preserveLocationLabel) {
+      dispatch({
+        type: "SELECT_LOCATION",
+        location: {
+          id: `startup:${location.lat.toFixed(6)},${location.lon.toFixed(6)}`,
+          label: location.label,
+          city: location.city,
+          country: location.country,
+          continent: location.continent,
+          lat: location.lat,
+          lon: location.lon,
+          preserveDisplayNames: location.preserveDisplayNames,
+          preserveLocationLabel: location.preserveLocationLabel,
+        },
+      });
+      dispatch({
+        type: "SET_FORM_FIELDS",
+        fields: {
+          distance: String(DEFAULT_DISTANCE_METERS),
+        },
+      });
+      dispatch({
+        type: "SET_USER_LOCATION",
+        location: {
+          id: `startup:${location.lat.toFixed(6)},${location.lon.toFixed(6)}`,
+          label: location.label,
+          city: location.city,
+          country: location.country,
+          continent: location.continent,
+          lat: location.lat,
+          lon: location.lon,
+          preserveDisplayNames: location.preserveDisplayNames,
+          preserveLocationLabel: location.preserveLocationLabel,
         },
       });
       return;
@@ -174,6 +214,8 @@ export default function StartupLocationModal({
       city: suggestion.city,
       country: suggestion.country,
       continent: String(suggestion.continent ?? "").trim(),
+      preserveDisplayNames: suggestion.preserveDisplayNames,
+      preserveLocationLabel: suggestion.preserveLocationLabel,
     });
     setLocationInput(suggestion.label);
     setIsInputFocused(false);

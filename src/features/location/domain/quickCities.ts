@@ -106,6 +106,8 @@ export function mapQuickCityToSearchResult(city: QuickCity): SearchResult {
     city: city.city,
     country: city.country,
     continent: city.continent,
+    preserveDisplayNames: true,
+    preserveLocationLabel: true,
     lat: city.lat,
     lon: city.lon,
   };

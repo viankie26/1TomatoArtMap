@@ -9,5 +9,7 @@ describe("DEFAULT_FORM", () => {
     expect(DEFAULT_FORM.displayContinent).toBe("亚洲");
     expect(DEFAULT_FORM.latitude).toBe("31.230400");
     expect(DEFAULT_FORM.longitude).toBe("121.473700");
+    expect(DEFAULT_FORM.fontFamily).toBe("Source Han Serif SC");
+    expect(DEFAULT_FORM.fontVariant).toBe("heavy");
   });
 });

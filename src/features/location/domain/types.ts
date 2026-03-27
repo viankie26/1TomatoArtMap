@@ -5,6 +5,8 @@ export interface Location {
   country: string;
   countryCode?: string;
   continent?: string;
+  preserveDisplayNames?: boolean;
+  preserveLocationLabel?: boolean;
   lat: number;
   lon: number;
 }

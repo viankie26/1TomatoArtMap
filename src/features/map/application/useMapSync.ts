@@ -166,8 +166,10 @@ export function useMapSync() {
           dispatch({
             type: "SET_FORM_FIELDS",
             fields: {
-              location: nextLocation,
               displayContinent: nextContinent,
+              ...(!state.displayNameOverrides.location
+                ? { location: nextLocation }
+                : {}),
               ...(!state.displayNameOverrides.city
                 ? { displayCity: nextCity }
                 : {}),
@@ -181,7 +183,12 @@ export function useMapSync() {
           // Ignore lookup failures; coordinates stay authoritative.
         });
     },
-    [dispatch, state.displayNameOverrides.city, state.displayNameOverrides.country],
+    [
+      dispatch,
+      state.displayNameOverrides.location,
+      state.displayNameOverrides.city,
+      state.displayNameOverrides.country,
+    ],
   );
 
   const handleMove = useCallback(

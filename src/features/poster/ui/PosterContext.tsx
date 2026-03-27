@@ -56,8 +56,8 @@ const defaultLayoutHeightCm = Number(
 );
 const DEFAULT_LOCATION_LABEL = "上海市，中国";
 const defaultTypography = resolveFontSelection({
-  fontFamily: "",
-  fontVariant: "",
+  fontFamily: "Source Han Serif SC",
+  fontVariant: "heavy",
 });
 
 export const DEFAULT_FORM: PosterForm = {
@@ -105,6 +105,7 @@ const INITIAL_STATE: PosterState = {
   selectedLocation: null,
   userLocation: null,
   displayNameOverrides: {
+    location: false,
     city: false,
     country: false,
   },

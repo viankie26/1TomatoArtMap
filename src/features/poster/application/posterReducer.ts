@@ -59,6 +59,7 @@ export interface PosterState {
   selectedLocation: SearchResult | null;
   userLocation: SearchResult | null;
   displayNameOverrides: {
+    location: boolean;
     city: boolean;
     country: boolean;
   };
@@ -132,11 +133,13 @@ export function posterReducer(
       }
 
       if (action.name === "location" && typeof action.value === "string") {
+        nextDisplayNameOverrides.location = false;
         nextDisplayNameOverrides.city = false;
         nextDisplayNameOverrides.country = false;
       }
 
       if (action.name === "latitude" || action.name === "longitude") {
+        nextDisplayNameOverrides.location = false;
         nextDisplayNameOverrides.city = false;
         nextDisplayNameOverrides.country = false;
       }
@@ -175,7 +178,7 @@ export function posterReducer(
         ...state,
         form: mergedForm,
         displayNameOverrides: action.resetDisplayNameOverrides
-          ? { city: false, country: false }
+          ? { location: false, city: false, country: false }
           : state.displayNameOverrides,
       };
     }
@@ -212,7 +215,11 @@ export function posterReducer(
         ...state,
         selectedLocation: action.location,
         isLocationFocused: false,
-        displayNameOverrides: { city: false, country: false },
+        displayNameOverrides: {
+          location: Boolean(action.location.preserveLocationLabel),
+          city: Boolean(action.location.preserveDisplayNames),
+          country: Boolean(action.location.preserveDisplayNames),
+        },
         form: {
           ...state.form,
           location: action.location.label,
@@ -234,7 +241,7 @@ export function posterReducer(
       return {
         ...state,
         selectedLocation: null,
-        displayNameOverrides: { city: false, country: false },
+        displayNameOverrides: { location: false, city: false, country: false },
         form: {
           ...state.form,
           location: "",

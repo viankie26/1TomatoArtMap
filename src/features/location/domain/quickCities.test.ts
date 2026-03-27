@@ -40,6 +40,8 @@ describe("quickCities", () => {
       continent: "亚洲",
       lat: 35.6762,
       lon: 139.6503,
+      preserveDisplayNames: true,
+      preserveLocationLabel: true,
     });
   });
 });
