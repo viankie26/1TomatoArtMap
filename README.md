@@ -1,11 +1,11 @@
 # 1TomatoMap
 
-[![Repository](https://img.shields.io/badge/GitHub-1TomatoMap-24292f?logo=github)](https://github.com/viankie090912-commits/1TomatoMap)
+[![Repository](https://img.shields.io/badge/GitHub-1TomatoMap-24292f?logo=github)](https://github.com/viankie26/1TomatoMap)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
 1TomatoMap is an independent open-source map poster studio for building clean, customizable city map posters in the browser.
 
-Repository: [viankie090912-commits/1TomatoMap](https://github.com/viankie090912-commits/1TomatoMap)
+Repository: [viankie26/1TomatoMap](https://github.com/viankie26/1TomatoMap)
 
 ## Project Origin
 
@@ -36,7 +36,7 @@ Terraink is a JavaScript reimplementation inspired by the original [MapToPoster]
 ## Run
 
 ```bash
-git clone https://github.com/viankie090912-commits/1TomatoMap.git
+git clone https://github.com/viankie26/1TomatoMap.git
 cd 1TomatoMap
 bun install
 bun run dev

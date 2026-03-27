@@ -43,10 +43,10 @@ export const DEFAULT_COUNTRY = "Germany";
 
 export const REPO_URL =
   import.meta.env.VITE_REPO_URL ??
-  "https://github.com/viankie090912-commits/1TomatoMap";
+  "https://github.com/viankie26/1TomatoMap";
 export const REPO_API_URL =
   import.meta.env.VITE_REPO_API_URL ??
-  "https://api.github.com/repos/viankie090912-commits/1TomatoMap";
+  "https://api.github.com/repos/viankie26/1TomatoMap";
 export const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL ?? "";
 export const LEGAL_NOTICE_URL = import.meta.env.VITE_LEGAL_NOTICE_URL ?? "";
 export const PRIVACY_URL = import.meta.env.VITE_PRIVACY_URL ?? "";
