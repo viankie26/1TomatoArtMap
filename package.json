@@ -2,13 +2,13 @@
   "name": "1tomatomap",
   "private": true,
   "version": "0.4.1",
-  "homepage": "https://github.com/viankie26/1TomatoMap",
+  "homepage": "https://github.com/viankie26/1TomatoArtMap",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/viankie26/1TomatoMap.git"
+    "url": "git+https://github.com/viankie26/1TomatoArtMap.git"
   },
   "bugs": {
-    "url": "https://github.com/viankie26/1TomatoMap/issues"
+    "url": "https://github.com/viankie26/1TomatoArtMap/issues"
   },
   "type": "module",
   "scripts": {

@@ -7,7 +7,7 @@ Thanks for your interest in contributing. This guide explains the expected workf
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/viankie26/1TomatoMap.git
+git clone https://github.com/viankie26/1TomatoArtMap.git
 cd 1TomatoMap
 bun install
 ```
