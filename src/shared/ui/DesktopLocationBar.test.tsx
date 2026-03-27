@@ -62,7 +62,7 @@ describe("DesktopLocationBar", () => {
     const locationInput = document.querySelector<HTMLInputElement>(
       'input[name="location"]',
     );
-    const trigger = screen.getByRole("button", { name: "Global Cities" });
+    const trigger = screen.getByRole("button", { name: "Major City Navigator" });
 
     expect(locationInput).not.toBeNull();
 
@@ -70,7 +70,7 @@ describe("DesktopLocationBar", () => {
 
     await user.click(trigger);
 
-    expect(screen.getAllByText("Global Cities").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Major City Navigator").length).toBeGreaterThan(0);
     expect(screen.getByRole("button", { name: "Tokyo" })).toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: "Tokyo" }));

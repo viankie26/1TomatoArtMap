@@ -79,7 +79,7 @@ export const enMessages = {
   "location.placeholder.latitude": "52.374478",
   "location.placeholder.longitude": "9.738553",
   "location.placeholder.search": "Start typing a city or place",
-  "location.quickCitiesTrigger": "Global Cities",
+  "location.quickCitiesTrigger": "Major City Navigator",
   "location.searching": "Searching...",
   "location.toggleCoordinates": "Toggle coordinate fields",
   "location.toggleCoordinatesTitle": "Show or hide latitude and longitude",

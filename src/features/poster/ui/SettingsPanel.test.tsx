@@ -127,9 +127,7 @@ describe("SettingsPanel localization", () => {
     expect(screen.getByRole("button", { name: "位置" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "样式" })).toBeInTheDocument();
     expect(screen.getByLabelText("显示城市")).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: "国际主要城市" }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "主要城市导航" })).toBeInTheDocument();
     expect(screen.getAllByText("午夜蓝").length).toBeGreaterThan(0);
     expect(screen.getAllByText("A4 纵向").length).toBeGreaterThan(0);
     expect(screen.getAllByText("打印").length).toBeGreaterThan(0);
@@ -141,14 +139,13 @@ describe("SettingsPanel localization", () => {
     renderSettingsPanel();
 
     const locationInput = screen.getByLabelText("Location");
-    const trigger = screen.getByRole("button", { name: "Global Cities" });
+    const trigger = screen.getByRole("button", { name: "Major City Navigator" });
 
     expect(screen.queryByRole("button", { name: "Tokyo" })).not.toBeInTheDocument();
 
     await user.click(trigger);
 
-    expect(screen.getAllByText("Global Cities").length).toBeGreaterThan(0);
-    expect(screen.getByText("China")).toBeInTheDocument();
+    expect(screen.getAllByText("Major City Navigator").length).toBeGreaterThan(0);
     expect(screen.getByRole("button", { name: "Tokyo" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Hangzhou" })).toBeInTheDocument();
 

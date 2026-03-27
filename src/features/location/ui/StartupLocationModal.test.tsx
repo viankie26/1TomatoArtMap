@@ -63,7 +63,7 @@ describe("StartupLocationModal", () => {
       name: "Get my location",
     });
     const quickCitiesTrigger = screen.getByRole("button", {
-      name: "Global Cities",
+      name: "Major City Navigator",
     });
     const confirmButton = screen.getByRole("button", { name: "OK" });
 
@@ -82,8 +82,8 @@ describe("StartupLocationModal", () => {
 
     await user.click(quickCitiesTrigger);
 
-    expect(screen.getAllByText("Global Cities").length).toBeGreaterThan(0);
+    expect(screen.getAllByText("Major City Navigator").length).toBeGreaterThan(0);
     expect(screen.getByRole("button", { name: "Tokyo" })).toBeInTheDocument();
-    expect(screen.queryByText("China")).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Hangzhou" })).toBeInTheDocument();
   });
 });

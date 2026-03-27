@@ -5,17 +5,15 @@ import {
 } from "@/features/location/domain/quickCities";
 
 describe("quickCities", () => {
-  it("returns localized quick city groups for English and Chinese", () => {
+  it("returns one localized major city navigator group for English and Chinese", () => {
     const englishGroups = getQuickCityGroups("en");
     const chineseGroups = getQuickCityGroups("zh-CN");
 
     expect(englishGroups.map((group) => group.label)).toEqual([
-      "Global Cities",
-      "China",
+      "Major City Navigator",
     ]);
     expect(chineseGroups.map((group) => group.label)).toEqual([
-      "国际主要城市",
-      "中国",
+      "主要城市导航",
     ]);
 
     expect(englishGroups[0]?.cities.some((city) => city.label === "Tokyo")).toBe(
@@ -24,7 +22,7 @@ describe("quickCities", () => {
     expect(chineseGroups[0]?.cities.some((city) => city.label === "东京")).toBe(
       true,
     );
-    expect(chineseGroups[1]?.cities.some((city) => city.label === "杭州")).toBe(
+    expect(chineseGroups[0]?.cities.some((city) => city.label === "杭州")).toBe(
       true,
     );
   });

@@ -290,10 +290,7 @@ export default function StartupLocationModal({
           <MyLocationIcon />
           <span>{isResolving ? t("startup.locating") : t("startup.getMyLocation")}</span>
         </button>
-        <QuickCitiesPicker
-          groupIds={["global"]}
-          onSelect={onSuggestionSelect}
-        />
+        <QuickCitiesPicker onSelect={onSuggestionSelect} />
         <button
           type="button"
           className="startup-location-action startup-location-action--confirm"

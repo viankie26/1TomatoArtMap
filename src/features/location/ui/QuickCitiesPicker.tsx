@@ -4,28 +4,17 @@ import type { SearchResult } from "@/features/location/domain/types";
 import {
   getQuickCityGroups,
   mapQuickCityToSearchResult,
-  type QuickCityGroupId,
 } from "@/features/location/domain/quickCities";
 
 interface QuickCitiesPickerProps {
   onSelect: (suggestion: SearchResult) => void;
-  groupIds?: QuickCityGroupId[];
 }
 
-export default function QuickCitiesPicker({
-  onSelect,
-  groupIds,
-}: QuickCitiesPickerProps) {
+export default function QuickCitiesPicker({ onSelect }: QuickCitiesPickerProps) {
   const { locale, t } = useLocale();
   const [isOpen, setIsOpen] = useState(false);
 
-  const quickCityGroups = useMemo(() => {
-    const groups = getQuickCityGroups(locale);
-    if (!groupIds?.length) {
-      return groups;
-    }
-    return groups.filter((group) => groupIds.includes(group.id));
-  }, [groupIds, locale]);
+  const quickCityGroups = useMemo(() => getQuickCityGroups(locale), [locale]);
 
   if (quickCityGroups.length === 0) {
     return null;

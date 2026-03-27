@@ -79,7 +79,7 @@ export const zhCNMessages = {
   "location.placeholder.latitude": "52.374478",
   "location.placeholder.longitude": "9.738553",
   "location.placeholder.search": "输入城市或地点名称",
-  "location.quickCitiesTrigger": "国际主要城市",
+  "location.quickCitiesTrigger": "主要城市导航",
   "location.searching": "搜索中...",
   "location.toggleCoordinates": "切换坐标输入框",
   "location.toggleCoordinatesTitle": "显示或隐藏纬度和经度",
