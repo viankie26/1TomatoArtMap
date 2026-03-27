@@ -44,6 +44,7 @@ import {
   DEFAULT_DISTANCE_METERS,
   DEFAULT_LAT,
   DEFAULT_LON,
+  DEFAULT_CONTINENT,
 } from "@/core/config";
 
 const defaultLayoutOption = getLayoutOption(defaultLayoutId);
@@ -53,8 +54,7 @@ const defaultLayoutWidthCm = Number(
 const defaultLayoutHeightCm = Number(
   defaultLayoutOption?.heightCm ?? DEFAULT_POSTER_HEIGHT_CM,
 );
-const DEFAULT_LOCATION_LABEL =
-  "Hanover, Region Hannover, Lower Saxony, Germany";
+const DEFAULT_LOCATION_LABEL = "上海市，中国";
 const defaultTypography = resolveFontSelection({
   fontFamily: "",
   fontVariant: "",
@@ -69,9 +69,9 @@ export const DEFAULT_FORM: PosterForm = {
   height: String(defaultLayoutHeightCm),
   theme: defaultThemeName,
   layout: defaultLayoutId,
-  displayCity: "Hanover",
-  displayCountry: "Germany",
-  displayContinent: "Europe",
+  displayCity: "上海市",
+  displayCountry: "中国",
+  displayContinent: DEFAULT_CONTINENT,
   fontFamily: defaultTypography.family.id,
   fontVariant: defaultTypography.variant.id,
   showPosterText: true,
@@ -147,7 +147,7 @@ export function PosterProvider({ children }: { children: ReactNode }) {
   const lastSyncedMarkerThemeColorRef = useRef<string | null>(null);
   const hasLoadedCustomIconsRef = useRef(false);
 
-  // Set initial position from browser geolocation (or Hanover fallback)
+  // Set initial position from browser geolocation (or Shanghai fallback)
   useGeolocation(dispatch);
 
   const selectedTheme = useMemo(

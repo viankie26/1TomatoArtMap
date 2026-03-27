@@ -4,19 +4,19 @@ import {
   DEFAULT_LON,
   DEFAULT_CITY,
   DEFAULT_COUNTRY,
+  DEFAULT_CONTINENT,
 } from "@/core/config";
 import { GEOLOCATION_TIMEOUT_MS } from "@/features/map/infrastructure";
 import type { PosterAction } from "@/features/poster/application/posterReducer";
 
 /**
  * Initializes map start position from browser geolocation.
- * Falls back to Hanover coordinates when geolocation is unavailable or denied.
+ * Falls back to Shanghai coordinates when geolocation is unavailable or denied.
  */
 export function useGeolocation(dispatch: React.Dispatch<PosterAction>) {
   useEffect(() => {
     let cancelled = false;
-    const defaultLocationLabel =
-      "Hanover, Region Hannover, Lower Saxony, Germany";
+    const defaultLocationLabel = "上海市，中国";
 
     const applyFallback = () => {
       if (cancelled) return;
@@ -30,7 +30,7 @@ export function useGeolocation(dispatch: React.Dispatch<PosterAction>) {
           longitude: DEFAULT_LON.toFixed(6),
           displayCity: DEFAULT_CITY,
           displayCountry: DEFAULT_COUNTRY,
-          displayContinent: "Europe",
+          displayContinent: DEFAULT_CONTINENT,
         },
       });
     };

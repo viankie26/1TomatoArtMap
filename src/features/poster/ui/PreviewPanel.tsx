@@ -33,6 +33,7 @@ import {
   DEFAULT_LON,
   DEFAULT_CITY,
   DEFAULT_COUNTRY,
+  DEFAULT_CONTINENT,
 } from "@/core/config";
 import { ensureFontVariant, reverseGeocodeCoordinates } from "@/core/services";
 import {
@@ -51,8 +52,7 @@ const UNLOCK_HINT = `${LOCKED_HINT}\nClick to unlock map editing.`;
 const RECENTER_HINT = "Recenter map to the current location";
 const COUNTRY_VIEW_ZOOM_LEVEL = 10;
 const CONTINENT_VIEW_ZOOM_LEVEL = 6;
-const DEFAULT_LOCATION_LABEL =
-  "Hanover, Region Hannover, Lower Saxony, Germany";
+const DEFAULT_LOCATION_LABEL = "上海市，中国";
 
 export default function PreviewPanel() {
   const { locale } = useLocale();
@@ -201,14 +201,14 @@ export default function PreviewPanel() {
   const isCountryContinentView =
     mapZoom >= CONTINENT_VIEW_ZOOM_LEVEL && mapZoom < COUNTRY_VIEW_ZOOM_LEVEL;
   const cityLabel = isCityCountryView
-    ? form.displayCity || form.location || "Hanover"
+    ? form.displayCity || form.location || "上海市"
     : isCountryContinentView
-      ? form.displayCountry || "Germany"
+      ? form.displayCountry || "中国"
       : form.displayContinent || "Earth";
   const countryLabel = isCityCountryView
-    ? form.displayCountry || "Germany"
+    ? form.displayCountry || "中国"
     : isCountryContinentView
-      ? form.displayContinent || "Europe"
+      ? form.displayContinent || DEFAULT_CONTINENT
       : "Earth";
 
   const handleStartEditing = useCallback(() => {
@@ -335,13 +335,13 @@ export default function PreviewPanel() {
 
     if (city && country) {
       // All display names known — single dispatch with coordinates + correct names.
-      applyTarget(city, country, continent || "Europe", label, true);
+      applyTarget(city, country, continent || DEFAULT_CONTINENT, label, true);
       return;
     }
 
     // Coordinates known but names aren't — set coordinates with fallback names
     // immediately, then overwrite names once reverse-geocoding resolves.
-    applyTarget(DEFAULT_CITY, DEFAULT_COUNTRY, "Europe", label, true);
+    applyTarget(DEFAULT_CITY, DEFAULT_COUNTRY, DEFAULT_CONTINENT, label, true);
 
     void reverseGeocodeCoordinates(target.lat, target.lon)
       .then((resolved) => {
@@ -354,7 +354,7 @@ export default function PreviewPanel() {
             displayCountry:
               String(resolved.country ?? "").trim() || DEFAULT_COUNTRY,
             displayContinent:
-              String(resolved.continent ?? "").trim() || "Europe",
+              String(resolved.continent ?? "").trim() || DEFAULT_CONTINENT,
           },
         });
       })

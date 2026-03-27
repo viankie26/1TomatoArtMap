@@ -6,6 +6,7 @@ import {
   DEFAULT_DISTANCE_METERS,
   DEFAULT_LAT,
   DEFAULT_LON,
+  DEFAULT_CONTINENT,
 } from "@/core/config";
 import { geocodeLocation, reverseGeocodeCoordinates } from "@/core/services";
 import { GEOLOCATION_TIMEOUT_MS } from "@/features/map/infrastructure";
@@ -19,7 +20,7 @@ import { useLocationAutocomplete } from "@/features/location/application/useLoca
 import type { SearchResult } from "@/features/location/domain/types";
 
 const CLOSE_ANIMATION_MS = 220;
-const DEFAULT_LOCATION_LABEL = "Hanover, Region Hannover, Lower Saxony, Germany";
+const DEFAULT_LOCATION_LABEL = "上海市，中国";
 
 interface PendingLocation {
   label: string;
@@ -72,7 +73,7 @@ export default function StartupLocationModal({
           distance: String(DEFAULT_DISTANCE_METERS),
           displayCity: DEFAULT_CITY,
           displayCountry: DEFAULT_COUNTRY,
-          displayContinent: "Europe",
+          displayContinent: DEFAULT_CONTINENT,
         },
       });
       return;
