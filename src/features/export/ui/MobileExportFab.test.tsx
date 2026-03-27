@@ -8,11 +8,11 @@ import MobileExportFab from "@/features/export/ui/MobileExportFab";
 import { useRepoStars } from "@/shared/hooks/useRepoStars";
 
 vi.mock("@/core/config", () => ({
-  KOFI_URL: "https://ko-fi.com/1tomatomap",
-  REPO_API_URL: "https://api.github.com/repos/acme/1tomatomap",
-  REPO_URL: "https://github.com/acme/1tomatomap",
-  SOCIAL_INSTAGRAM: "https://instagram.com/1tomatomap",
-  SOCIAL_LINKEDIN: "https://linkedin.com/company/1tomatomap",
+  KOFI_URL: "https://ko-fi.com/1tomatoartmap",
+  REPO_API_URL: "https://api.github.com/repos/acme/1tomatoartmap",
+  REPO_URL: "https://github.com/acme/1tomatoartmap",
+  SOCIAL_INSTAGRAM: "https://instagram.com/1tomatoartmap",
+  SOCIAL_LINKEDIN: "https://linkedin.com/company/1tomatoartmap",
   SOCIAL_REDDIT: "",
   SOCIAL_THREADS: "",
   SOCIAL_YOUTUBE: "",
@@ -155,7 +155,7 @@ describe("MobileExportFab", () => {
       dismissSupportPrompt: vi.fn(),
     });
 
-    window.localStorage.setItem("1tomatomap.locale", "zh-CN");
+    window.localStorage.setItem("1tomatoartmap.locale", "zh-CN");
 
     renderWithLocale();
 

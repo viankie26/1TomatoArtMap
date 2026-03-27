@@ -26,7 +26,7 @@ describe("posterPreferencesStorage", () => {
 
   it("rehydrates saved poster typography with a valid default variant fallback", () => {
     window.localStorage.setItem(
-      "1tomatomap.poster.typography",
+      "1tomatoartmap.poster.typography",
       JSON.stringify({
         fontFamily: "Source Han Sans SC",
         fontVariant: "missing",

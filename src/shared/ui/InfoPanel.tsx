@@ -87,7 +87,7 @@ function HelpUsGrowSection({
                 href={repoUrl}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Open 1TomatoMap repository on GitHub"
+                aria-label="Open 1TomatoArtMap repository on GitHub"
               >
                 <GitHubIcon className="badge-icon" />
                 <span>{t("info.githubRepo")}</span>
@@ -104,7 +104,7 @@ function HelpUsGrowSection({
                 href={`${repoUrl}/stargazers`}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Star 1TomatoMap on GitHub"
+                aria-label="Star 1TomatoArtMap on GitHub"
               >
                 <StarIcon className="badge-icon" />
                 <span>{starsText !== null ? starsText : "Star"}</span>
@@ -124,7 +124,7 @@ function HelpUsGrowSection({
                 href={kofiUrl}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Support 1TomatoMap on Ko-fi"
+                aria-label="Support 1TomatoArtMap on Ko-fi"
               >
                 <KofiIcon className="badge-icon" />
                 <span>{t("info.supportKofi")}</span>
@@ -150,7 +150,7 @@ function HelpUsGrowSection({
                   href={href}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={`Follow 1TomatoMap on ${label}`}
+                  aria-label={`Follow 1TomatoArtMap on ${label}`}
                   title={label}
                 >
                   <Icon className="social-icon" />

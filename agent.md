@@ -1,4 +1,4 @@
-# 1TomatoMap — Agent Architecture Guide
+# 1TomatoArtMap — Agent Architecture Guide
 
 > **For any AI coding agent working on this codebase.**
 > Read this file fully before writing, editing, or deleting any code.

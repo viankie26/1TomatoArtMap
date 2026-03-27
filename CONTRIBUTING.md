@@ -1,4 +1,4 @@
-# Contributing to 1TomatoMap
+# Contributing to 1TomatoArtMap
 
 Thanks for your interest in contributing. This guide explains the expected workflow and engineering standards used in this repository.
 
@@ -8,7 +8,7 @@ Thanks for your interest in contributing. This guide explains the expected workf
 
 ```bash
 git clone https://github.com/viankie26/1TomatoArtMap.git
-cd 1TomatoMap
+cd 1TomatoArtMap
 bun install
 ```
 

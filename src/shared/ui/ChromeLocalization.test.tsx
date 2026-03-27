@@ -10,14 +10,14 @@ import { useRepoStars } from "@/shared/hooks/useRepoStars";
 import useInstallPrompt from "@/features/install/application/useInstallPrompt";
 
 vi.mock("@/core/config", () => ({
-  CONTACT_EMAIL: "hello@1tomatomap.com",
-  LEGAL_NOTICE_URL: "https://1tomatomap.example/imprint",
-  PRIVACY_URL: "https://1tomatomap.example/privacy",
-  REPO_API_URL: "https://api.github.com/repos/acme/1tomatomap",
-  REPO_URL: "https://github.com/acme/1tomatomap",
-  KOFI_URL: "https://ko-fi.com/1tomatomap",
-  SOCIAL_LINKEDIN: "https://linkedin.com/company/1tomatomap",
-  SOCIAL_INSTAGRAM: "https://instagram.com/1tomatomap",
+  CONTACT_EMAIL: "hello@1tomatoartmap.com",
+  LEGAL_NOTICE_URL: "https://1tomatoartmap.example/imprint",
+  PRIVACY_URL: "https://1tomatoartmap.example/privacy",
+  REPO_API_URL: "https://api.github.com/repos/acme/1tomatoartmap",
+  REPO_URL: "https://github.com/acme/1tomatoartmap",
+  KOFI_URL: "https://ko-fi.com/1tomatoartmap",
+  SOCIAL_LINKEDIN: "https://linkedin.com/company/1tomatoartmap",
+  SOCIAL_INSTAGRAM: "https://instagram.com/1tomatoartmap",
   SOCIAL_REDDIT: "",
   SOCIAL_THREADS: "",
   SOCIAL_YOUTUBE: "",
@@ -132,7 +132,7 @@ describe("Shared chrome localization", () => {
     expect(screen.getByText("Data Privacy")).toBeInTheDocument();
     expect(screen.getByText(/Made with/)).toBeInTheDocument();
     expect(
-      screen.getByRole("dialog", { name: "About 1TomatoMap" }),
+      screen.getByRole("dialog", { name: "About 1TomatoArtMap" }),
     ).toBeInTheDocument();
     expect(screen.getByText("Help Us Grow")).toBeInTheDocument();
     expect(
@@ -140,7 +140,7 @@ describe("Shared chrome localization", () => {
     ).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Done" })).toBeInTheDocument();
     expect(
-      screen.getByText("Install 1TomatoMap for faster access and a better experience."),
+      screen.getByText("Install 1TomatoArtMap for faster access and a better experience."),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("button", { name: "Add to Home Screen" }),
@@ -156,14 +156,14 @@ describe("Shared chrome localization", () => {
       "用 ❤︎ 献给所有热爱地图的人",
     );
     expect(
-      screen.getByRole("dialog", { name: "关于 1TomatoMap" }),
+      screen.getByRole("dialog", { name: "关于 1TomatoArtMap" }),
     ).toBeInTheDocument();
     expect(screen.getByText("帮助我们成长")).toBeInTheDocument();
     expect(
       screen.getByRole("button", { name: "关闭 Test picker" }),
     ).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "完成" })).toBeInTheDocument();
-    expect(screen.getByText("安装 1TomatoMap，获得更快访问和更好的体验。")).toBeInTheDocument();
+    expect(screen.getByText("安装 1TomatoArtMap，获得更快访问和更好的体验。")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "添加到主屏幕" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "稍后再说" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "诊断信息" })).toBeInTheDocument();

@@ -1,10 +1,10 @@
 services:
-  1tomatomap:
+  1tomatoartmap:
     build:
       context: .
       dockerfile: Dockerfile
-    image: 1tomatomap:latest
-    container_name: 1tomatomap
+    image: 1tomatoartmap:latest
+    container_name: 1tomatoartmap
     ports:
       - "${APP_PORT:-7200}:80"
     restart: unless-stopped

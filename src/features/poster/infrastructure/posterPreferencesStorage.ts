@@ -1,7 +1,7 @@
 import { resolveFontSelection } from "@/core/fonts/catalog";
 import type { FontSelection } from "@/core/fonts/types";
 
-const POSTER_TYPOGRAPHY_STORAGE_KEY = "1tomatomap.poster.typography";
+const POSTER_TYPOGRAPHY_STORAGE_KEY = "1tomatoartmap.poster.typography";
 
 export function readPosterTypographyPreferences(): {
   fontFamily: string;

@@ -1,6 +1,6 @@
 {
-  "name": "1TomatoMap",
-  "short_name": "1TomatoMap",
+  "name": "1TomatoArtMap",
+  "short_name": "1TomatoArtMap",
   "description": "Independent open-source map poster generator based on Terraink.",
   "id": "/",
   "start_url": "/",

@@ -16,10 +16,10 @@ export default function GeneralHeader({ onAboutOpen }: GeneralHeaderProps) {
         <img
           className="desktop-brand-logo brand-logo"
           src="/assets/logo.png"
-          alt="1TomatoMap logo"
+          alt="1TomatoArtMap logo"
         />
         <div className="desktop-brand-copy brand-copy">
-          <h1 className="desktop-brand-title">1TomatoMap</h1>
+          <h1 className="desktop-brand-title">1TomatoArtMap</h1>
           <p className="desktop-brand-kicker app-kicker">
             {t("header.brandKicker")}
           </p>

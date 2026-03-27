@@ -5,7 +5,7 @@ interface UseRepoStarsReturn {
   repoStarsLoading: boolean;
 }
 
-const REPO_STARS_CACHE_PREFIX = "1tomatomap.repoStars.";
+const REPO_STARS_CACHE_PREFIX = "1tomatoartmap.repoStars.";
 const memoryStarsCache = new Map<string, number>();
 const inFlightRequests = new Map<string, Promise<number | null>>();
 

@@ -60,7 +60,7 @@ describe("SettingsInfo localization", () => {
   });
 
   it("renders the settings summary labels in Chinese when zh-CN is stored", () => {
-    window.localStorage.setItem("1tomatomap.locale", "zh-CN");
+    window.localStorage.setItem("1tomatoartmap.locale", "zh-CN");
 
     renderSettingsInfo();
 

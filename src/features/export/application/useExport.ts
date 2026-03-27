@@ -20,7 +20,7 @@ import {
   DEFAULT_POSTER_HEIGHT_CM,
 } from "@/core/config";
 
-const EXPORT_COUNT_STORAGE_KEY = "1tomatomap.poster.count";
+const EXPORT_COUNT_STORAGE_KEY = "1tomatoartmap.poster.count";
 
 export interface SupportPromptState {
   posterNumber: number;

@@ -1,11 +1,11 @@
-# 1TomatoMap
+# 1TomatoArtMap
 
-[![Repository](https://img.shields.io/badge/GitHub-1TomatoMap-24292f?logo=github)](https://github.com/viankie26/1TomatoArtMap)
+[![Repository](https://img.shields.io/badge/GitHub-1TomatoArtMap-24292f?logo=github)](https://github.com/viankie26/1TomatoArtMap)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
-1TomatoMap is an independent open-source map poster studio for building clean, customizable city map posters in the browser, with a bilingual workflow optimized to make the experience easier for Chinese users.
+1TomatoArtMap is an independent open-source map poster studio for building clean, customizable city map posters in the browser, with a bilingual workflow optimized to make the experience easier for Chinese users.
 
-1TomatoMap 是一个独立开源的地图海报工作室，专注于在浏览器中生成简洁、可定制的城市地图海报，并通过双语体验和中文优化，让中文用户使用起来更直接、更方便。
+1TomatoArtMap 是一个独立开源的地图海报工作室，专注于在浏览器中生成简洁、可定制的城市地图海报，并通过双语体验和中文优化，让中文用户使用起来更直接、更方便。
 
 Repository: [viankie26/1TomatoArtMap](https://github.com/viankie26/1TomatoArtMap)
 
@@ -21,9 +21,9 @@ Terraink is a JavaScript reimplementation inspired by the original [MapToPoster]
 
 Terraink 是对 [Ankur Gupta](https://github.com/originalankur) 原始项目 [MapToPoster](https://github.com/originalankur/maptoposter) 的 JavaScript 重实现，上游两个项目都基于 MIT License 发布。
 
-1TomatoMap keeps that upstream acknowledgement chain and preserves the original MIT licensing terms while using its own project name and branding.
+1TomatoArtMap keeps that upstream acknowledgement chain and preserves the original MIT licensing terms while using its own project name and branding.
 
-1TomatoMap 保留了这条上游致谢链路，也继续遵守原始 MIT License，同时使用自己的项目名称和品牌标识。
+1TomatoArtMap 保留了这条上游致谢链路，也继续遵守原始 MIT License，同时使用自己的项目名称和品牌标识。
 
 ## Features / 功能特性
 
@@ -47,7 +47,7 @@ Terraink 是对 [Ankur Gupta](https://github.com/originalankur) 原始项目 [Ma
 
 ```bash
 git clone https://github.com/viankie26/1TomatoArtMap.git
-cd 1TomatoMap
+cd 1TomatoArtMap
 bun install
 bun run dev
 ```
@@ -85,8 +85,8 @@ docker compose down
 ### Build and run without Compose / 不使用 Compose 直接构建和运行
 
 ```bash
-docker build -t 1tomatomap:latest .
-docker run -d --name 1tomatomap -p 7200:80 --restart unless-stopped 1tomatomap:latest
+docker build -t 1tomatoartmap:latest .
+docker run -d --name 1tomatoartmap -p 7200:80 --restart unless-stopped 1tomatoartmap:latest
 ```
 
 ## Contributing / 贡献说明

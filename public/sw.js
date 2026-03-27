@@ -1,4 +1,4 @@
-const CACHE_NAME = "1tomatomap-static-v1";
+const CACHE_NAME = "1tomatoartmap-static-v1";
 const APP_SHELL_ASSETS = [
   "/",
   "/index.html",

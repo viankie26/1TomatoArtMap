@@ -9,10 +9,10 @@ import DesktopNavBar from "@/shared/ui/DesktopNavBar";
 import MobileNavBar, { type MobileTab } from "@/shared/ui/MobileNavBar";
 
 vi.mock("@/core/config", () => ({
-  KOFI_URL: "https://ko-fi.com/1tomatomap",
-  REPO_API_URL: "https://api.github.com/repos/acme/1tomatomap",
-  REPO_URL: "https://github.com/acme/1tomatomap",
-  SOCIAL_INSTAGRAM: "https://instagram.com/1tomatomap",
+  KOFI_URL: "https://ko-fi.com/1tomatoartmap",
+  REPO_API_URL: "https://api.github.com/repos/acme/1tomatoartmap",
+  REPO_URL: "https://github.com/acme/1tomatoartmap",
+  SOCIAL_INSTAGRAM: "https://instagram.com/1tomatoartmap",
 }));
 
 vi.mock("@/shared/hooks/useRepoStars", () => ({
@@ -126,7 +126,7 @@ describe("LocaleSwitch", () => {
     expect(screen.getAllByRole("button", { name: "Settings" })).toHaveLength(2);
     expect(screen.getByLabelText("Project links")).toBeInTheDocument();
     expect(
-      screen.getByLabelText("Open 1TomatoMap repository on GitHub"),
+      screen.getByLabelText("Open 1TomatoArtMap repository on GitHub"),
     ).toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: "中文" }));
@@ -140,7 +140,7 @@ describe("LocaleSwitch", () => {
     expect(screen.getAllByRole("button", { name: "设置" })).toHaveLength(2);
     expect(screen.getByLabelText("项目链接")).toBeInTheDocument();
     expect(
-      screen.getByLabelText("在 GitHub 上打开 1TomatoMap 仓库"),
+      screen.getByLabelText("在 GitHub 上打开 1TomatoArtMap 仓库"),
     ).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "English" })).toHaveAttribute(
       "aria-pressed",
@@ -172,7 +172,7 @@ describe("LocaleSwitch", () => {
 
     await user.click(screen.getByRole("button", { name: "中文" }));
 
-    expect(window.localStorage.getItem("1tomatomap.locale")).toBe("zh-CN");
+    expect(window.localStorage.getItem("1tomatoartmap.locale")).toBe("zh-CN");
 
     unmount();
 

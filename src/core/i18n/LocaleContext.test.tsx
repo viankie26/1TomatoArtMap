@@ -87,7 +87,7 @@ describe("LocaleProvider", () => {
     expect(screen.getByText("关于")).toBeInTheDocument();
     expect(screen.getByText("首页")).toBeInTheDocument();
     expect(screen.getByText("Fallback only")).toBeInTheDocument();
-    expect(window.localStorage.getItem("1tomatomap.locale")).toBe("zh-CN");
+    expect(window.localStorage.getItem("1tomatoartmap.locale")).toBe("zh-CN");
 
     unmount();
 

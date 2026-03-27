@@ -48,7 +48,7 @@ export default function FooterNote() {
 
       <div className="desktop-footer-middle">
         <p className="made-note">
-          1TomatoMap v{appVersion} | © 2026 | {t("footer.madeWith")}{" "}
+          1TomatoArtMap v{appVersion} | © 2026 | {t("footer.madeWith")}{" "}
           <span className="heart">❤︎</span> {t("footer.location")}
         </p>
       </div>

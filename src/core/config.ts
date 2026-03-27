@@ -61,7 +61,7 @@ export const DEVELOPER_NAME = import.meta.env.VITE_DEVELOPER_NAME ?? "";
 export const DEVELOPER_PROFILE_URL =
   import.meta.env.VITE_DEVELOPER_PROFILE_URL ?? "";
 export const APP_CREDIT_URL =
-  import.meta.env.VITE_APP_CREDIT_URL ?? "1tomatomap";
+  import.meta.env.VITE_APP_CREDIT_URL ?? "1tomatoartmap";
 export const INSTALL_DIAGNOSTICS_ENABLED = false;
 
 export interface FontOption {

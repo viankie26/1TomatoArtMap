@@ -232,7 +232,7 @@ export default function StartupLocationModal({
     >
       <div className="startup-location-logo-wrap" aria-hidden="true">
         <img className="startup-location-logo" src="/assets/logo.png" alt="" />
-        <p className="startup-location-app-name">1TomatoMap</p>
+        <p className="startup-location-app-name">1TomatoArtMap</p>
       </div>
 
       <div className="startup-location-card is-visible">
