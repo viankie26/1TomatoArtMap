@@ -1,7 +1,7 @@
 {
-  "name": "TerraInk",
-  "short_name": "TerraInk",
-  "description": "Free map poster generator powered by OpenStreetMap data.",
+  "name": "1TomatoMap",
+  "short_name": "1TomatoMap",
+  "description": "Independent open-source map poster generator based on Terraink.",
   "id": "/",
   "start_url": "/",
   "scope": "/",

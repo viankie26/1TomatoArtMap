@@ -1,3 +1,5 @@
+import { fontCatalog } from "@/core/fonts/catalog";
+
 /* ────── App config constants ────── */
 /* Migrated from src/constants/appConfig.js — env-independent values */
 
@@ -39,8 +41,12 @@ export const DEFAULT_LON = 9.732;
 export const DEFAULT_CITY = "Hanover";
 export const DEFAULT_COUNTRY = "Germany";
 
-export const REPO_URL = import.meta.env.VITE_REPO_URL ?? "";
-export const REPO_API_URL = import.meta.env.VITE_REPO_API_URL ?? "";
+export const REPO_URL =
+  import.meta.env.VITE_REPO_URL ??
+  "https://github.com/viankie090912-commits/1TomatoMap";
+export const REPO_API_URL =
+  import.meta.env.VITE_REPO_API_URL ??
+  "https://api.github.com/repos/viankie090912-commits/1TomatoMap";
 export const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL ?? "";
 export const LEGAL_NOTICE_URL = import.meta.env.VITE_LEGAL_NOTICE_URL ?? "";
 export const PRIVACY_URL = import.meta.env.VITE_PRIVACY_URL ?? "";
@@ -55,7 +61,7 @@ export const DEVELOPER_NAME = import.meta.env.VITE_DEVELOPER_NAME ?? "";
 export const DEVELOPER_PROFILE_URL =
   import.meta.env.VITE_DEVELOPER_PROFILE_URL ?? "";
 export const APP_CREDIT_URL =
-  import.meta.env.VITE_APP_CREDIT_URL ?? "terraink.app";
+  import.meta.env.VITE_APP_CREDIT_URL ?? "1tomatomap";
 export const INSTALL_DIAGNOSTICS_ENABLED = false;
 
 export interface FontOption {
@@ -63,15 +69,7 @@ export interface FontOption {
   label: string;
 }
 
-export const FONT_OPTIONS: FontOption[] = [
-  { value: "", label: "Default (Space Grotesk)" },
-  { value: "Montserrat", label: "Montserrat" },
-  { value: "Playfair Display", label: "Playfair Display" },
-  { value: "Oswald", label: "Oswald" },
-  { value: "Noto Sans JP", label: "Noto Sans JP" },
-  { value: "Source Sans Pro", label: "Source Sans Pro" },
-  { value: "Raleway", label: "Raleway" },
-  { value: "Lato", label: "Lato" },
-  { value: "Merriweather", label: "Merriweather" },
-  { value: "Bebas neue", label: "Bebas Neue" },
-];
+export const FONT_OPTIONS: FontOption[] = fontCatalog.map((family) => ({
+  value: family.id,
+  label: family.label,
+}));

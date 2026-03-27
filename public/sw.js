@@ -1,8 +1,11 @@
-const CACHE_NAME = "terraink-static-v2";
+const CACHE_NAME = "1tomatomap-static-v1";
 const APP_SHELL_ASSETS = [
   "/",
   "/index.html",
   "/site.webmanifest",
+  "/assets/logo.png",
+  "/assets/logo.svg",
+  "/assets/logo-mask.svg",
   "/assets/icon-192.png",
   "/assets/icon-512.png",
   "/assets/icon-maskable.png",

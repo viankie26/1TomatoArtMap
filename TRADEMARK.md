@@ -1,27 +1,13 @@
-# Trademark Policy
+# Upstream Trademark Notice
 
-This document outlines the policy of **Terraink** regarding the use of its trademarks.
+1TomatoMap is an independent open-source project.
 
-## 1. Ownership
+This repository is based on the Terraink source code, but it is not the official Terraink project and it does not claim any rights to the Terraink or TerraInk names, logos, or branding.
 
-The **Terraink™** name, logo, and related branding assets are the exclusive property of the project owner.
+## What This Means
 
-## 2. Usage under MIT License
+- You may truthfully describe the code origin, for example: "1TomatoMap is based on Terraink."
+- You must not present this repository as the official Terraink project.
+- You must not reuse Terraink or TerraInk branding in a way that suggests endorsement or affiliation.
 
-The MIT License (found in the [`LICENSE`](./LICENSE) file) allows you to use, copy, and modify the **source code** of this project. However, the MIT License does **not** grant any rights to use the trade names, trademarks, service marks, or product names of the project owner.
-
-## 3. Restricted Use
-
-You may not use the **Terraink** name or logo in a way that:
-
-- Suggests an official affiliation with or endorsement by the original project.
-- Uses the name for a competing commercial hosted service.
-- Confuses users into thinking your fork or derivative is the original "Terraink" tool.
-
-## 4. Permissible Use
-
-You may use the name **Terraink** only to truthfully describe the origin of the code (e.g., "This project is based on the Terraink source code").
-
----
-
-Last updated: March 9th 2026
+For the upstream trademark policy, see the original Terraink repository.

@@ -1,10 +1,8 @@
 import { useRepoStars } from "@/shared/hooks/useRepoStars";
+import { useLocale } from "@/core/i18n/LocaleContext";
 import {
   REPO_URL,
   REPO_API_URL,
-  CONTACT_EMAIL,
-  LEGAL_NOTICE_URL,
-  PRIVACY_URL,
   SOCIAL_LINKEDIN,
   SOCIAL_INSTAGRAM,
   SOCIAL_REDDIT,
@@ -35,6 +33,7 @@ function HelpUsGrowSection({
   repoStars: number | null;
   repoStarsLoading: boolean;
 }) {
+  const { t } = useLocale();
   const starsText = repoStarsLoading
     ? "…"
     : repoStars !== null
@@ -72,16 +71,15 @@ function HelpUsGrowSection({
 
   return (
     <section className="info-panel-section">
-      <h3>Help Us Grow</h3>
+      <h3>{t("info.helpUsGrow")}</h3>
       <p className="hug-copy">
-        Terraink is 100% client-side and open-source. Help us build the future
-        of map art by contributing to our roadmap!
+        {t("info.copy")}
       </p>
 
       <div className="hug-rows">
         {/* Support the project */}
         <div className="hug-row">
-          <span className="hug-row-label">Support the project</span>
+          <span className="hug-row-label">{t("info.supportProject")}</span>
           <div className="hug-row-content">
             {repoUrl ? (
               <a
@@ -89,15 +87,15 @@ function HelpUsGrowSection({
                 href={repoUrl}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Open TerraInk repository on GitHub"
+                aria-label="Open 1TomatoMap repository on GitHub"
               >
                 <GitHubIcon className="badge-icon" />
-                <span>GitHub Repo</span>
+                <span>{t("info.githubRepo")}</span>
               </a>
             ) : (
               <span className="github-badge" style={{ opacity: 0.45 }}>
                 <GitHubIcon className="badge-icon" />
-                <span>GitHub Repo</span>
+                <span>{t("info.githubRepo")}</span>
               </span>
             )}
             {repoUrl ? (
@@ -106,7 +104,7 @@ function HelpUsGrowSection({
                 href={`${repoUrl}/stargazers`}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Star TerraInk on GitHub"
+                aria-label="Star 1TomatoMap on GitHub"
               >
                 <StarIcon className="badge-icon" />
                 <span>{starsText !== null ? starsText : "Star"}</span>
@@ -126,15 +124,15 @@ function HelpUsGrowSection({
                 href={kofiUrl}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Support TerraInk on Ko-fi"
+                aria-label="Support 1TomatoMap on Ko-fi"
               >
                 <KofiIcon className="badge-icon" />
-                <span>Support on Ko-fi</span>
+                <span>{t("info.supportKofi")}</span>
               </a>
             ) : (
               <span className="github-badge" style={{ opacity: 0.45 }}>
                 <KofiIcon className="badge-icon" />
-                <span>Support on Ko-fi</span>
+                <span>{t("info.supportKofi")}</span>
               </span>
             )}
           </div>
@@ -142,7 +140,7 @@ function HelpUsGrowSection({
 
         {/* Spread the word */}
         <div className="hug-row">
-          <span className="hug-row-label">Spread the word</span>
+          <span className="hug-row-label">{t("info.spreadWord")}</span>
           <div className="hug-row-content social-links-row">
             {socialLinks.map(({ href, Icon, label }) =>
               href ? (
@@ -152,7 +150,7 @@ function HelpUsGrowSection({
                   href={href}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={`Follow TerraInk on ${label}`}
+                  aria-label={`Follow 1TomatoMap on ${label}`}
                   title={label}
                 >
                   <Icon className="social-icon" />
@@ -172,11 +170,11 @@ function HelpUsGrowSection({
 
         {/* Support the mission */}
         <div className="hug-row">
-          <span className="hug-row-label">Support the mission</span>
+          <span className="hug-row-label">{t("info.supportMission")}</span>
           <div className="hug-row-content">
             <span className="hug-credits-note">
               <CheckIcon className="hug-check-icon" />
-              Include credits to help others discover the tool
+              {t("info.creditsNote")}
             </span>
           </div>
         </div>
@@ -188,11 +186,41 @@ function HelpUsGrowSection({
 /* ── main panel ── */
 
 export default function InfoPanel() {
+  const { t } = useLocale();
   const repoUrl = String(REPO_URL ?? "").trim();
   const { repoStars, repoStarsLoading } = useRepoStars(REPO_API_URL);
 
   return (
     <aside className="info-panel">
+      <div className="info-panel-group">
+        <section className="info-panel-section">
+          <h3>{t("info.originTitle")}</h3>
+          <p className="hug-copy">
+            {t("info.originLineOneStart")}
+            <a
+              className="source-link"
+              href="https://github.com/yousifamanuel/terraink"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Terraink
+            </a>
+            {t("info.originLineOneEnd")}
+          </p>
+          <p className="hug-copy">
+            {t("info.originLineTwoStart")}
+            <a
+              className="source-link"
+              href="https://github.com/originalankur/maptoposter"
+              target="_blank"
+              rel="noreferrer"
+            >
+              MapToPoster
+            </a>
+            {t("info.originLineTwoEnd")}
+          </p>
+        </section>
+      </div>
       <div className="info-panel-group">
         <HelpUsGrowSection
           repoUrl={repoUrl}

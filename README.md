@@ -1,69 +1,43 @@
-![](./public/assets/banner.png)
+# 1TomatoMap
 
-# TerraInk
+[![Repository](https://img.shields.io/badge/GitHub-1TomatoMap-24292f?logo=github)](https://github.com/viankie090912-commits/1TomatoMap)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
-[![Website Badge](https://img.shields.io/badge/Website-fff?logo=appveyor&logoColor=000&style=for-the-badge)](https://terraink.app)
-[![Email Badge](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=fff&style=for-the-badge)](mailto:hello@terraink.app)
-[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0A66C2?logo=linkedin&logoColor=fff&style=for-the-badge)](https://www.linkedin.com/company/terraink/)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?logo=instagram&logoColor=fff&style=for-the-badge)](https://instagram.com/terraink.app)
-[![YouTube](https://img.shields.io/badge/YouTube-FF0000?logo=youtube&logoColor=fff&style=for-the-badge)](https://www.youtube.com/@terrainkapp)
-[![Threads](https://img.shields.io/badge/Threads-000?logo=threads&logoColor=fff&style=for-the-badge)](https://www.threads.net/@terraink.app)
-[![Reddit](https://img.shields.io/badge/Reddit-FF4500?logo=reddit&logoColor=fff&style=for-the-badge)](https://www.reddit.com/r/terraink)
-[![TikTok](https://img.shields.io/badge/TikTok-000?logo=tiktok&logoColor=fff&style=for-the-badge)](https://www.tiktok.com/@terraink.app)
-[![Product Hunt](https://img.shields.io/badge/Product%20Hunt-DA552F?logo=producthunt&logoColor=fff&style=for-the-badge)](https://www.producthunt.com/products/terraink)
+1TomatoMap is an independent open-source map poster studio for building clean, customizable city map posters in the browser.
 
-[![Bun Badge](https://img.shields.io/badge/Bun-000?logo=bun&logoColor=fff&style=for-the-badge)](https://bun.sh)
-[![Vite Badge](https://img.shields.io/badge/Vite-9135FF?logo=vite&logoColor=fff&style=for-the-badge)](https://vitejs.dev)
-[![React Badge](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=for-the-badge)](https://react.dev/)
-[![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=for-the-badge)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![TypeScript Badge](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=fff&style=for-the-badge)](https://www.typescriptlang.org)
-[![OpenStreetMap Badge](https://img.shields.io/badge/OpenStreetMap-7EBC6F?logo=openstreetmap&logoColor=fff&style=for-the-badge)](https://www.openstreetmap.org)
-[![MapLibre Badge](https://img.shields.io/badge/MapLibre-000?logo=maplibre&logoColor=fff&style=for-the-badge)](https://maplibre.org/)
-[![GitHub Badge](https://img.shields.io/badge/GitHub-fff?logo=github&logoColor=000&style=for-the-badge)](https://github.com/yousifamanuel/terraink)
-[![Cloudflare Badge](https://img.shields.io/badge/Cloudflare-F38020?logo=cloudflare&logoColor=fff&style=for-the-badge)](https://www.cloudflare.com)
-[![Docker Badge](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff&style=for-the-badge)](https://www.docker.com)
+Repository: [viankie090912-commits/1TomatoMap](https://github.com/viankie090912-commits/1TomatoMap)
 
-> Note: TerraInk is still in development. Every feedback is appreciated. This is a for-fun, open-source project, and community contributions are very welcome.
+## Project Origin
 
-## Acknowledgment
+This project is modified from [Terraink](https://github.com/yousifamanuel/terraink).
 
-This project is a JavaScript reimplementation inspired by the original MapToPoster [originalankur/maptoposter](https://github.com/originalankur/maptoposter) by [Ankur Gupta](https://github.com/originalankur) (MIT license). My app is built using Bun, React, and TypeScript. It allows users to create custom city map posters with various styling options, leveraging OpenStreetMap data rendered via MapLibre and OpenFreeMap vector tiles.
+Terraink is a JavaScript reimplementation inspired by the original [MapToPoster](https://github.com/originalankur/maptoposter) by [Ankur Gupta](https://github.com/originalankur), and both upstream projects are published under the MIT License.
+
+1TomatoMap keeps that upstream acknowledgement chain and preserves the original MIT licensing terms while using its own project name and branding.
 
 ## Features
 
-- **Custom city map posters** for any location in the world, powered by real OpenStreetMap data
-- **Smart geocoding** — search for any city or region by name, or enter coordinates manually
-- **Rich theme system** — choose from dozens of curated themes or build your own custom color palette
-- **Detailed map layers** — roads, water bodies, parks, and building footprints with per-layer styling
-- **Typography controls** — set city/country display labels and load any Google Fonts family
-- **High-resolution PNG export** — download a print-ready poster at any defined dimension
+- Custom city map posters for any location in the world, powered by real OpenStreetMap data
+- Smart geocoding with place search, coordinate entry, and current-location support
+- Rich theme system with curated presets and custom color editing
+- Detailed map layers including roads, water, parks, rail, and buildings
+- Bilingual interface with explicit English and Simplified Chinese switching
+- Typography controls with curated Latin fonts plus Source Han Sans and Source Han Serif variants
+- High-resolution export for print-ready posters
 
 ## Data Providers and Mapping Stack
 
-- **Map data**: [OpenStreetMap contributors](https://www.openstreetmap.org/copyright)
-- **Tiles**: [OpenMapTiles](https://openmaptiles.org/)
-- **Tile hosting**: [OpenFreeMap](https://openfreemap.org/)
-- **Geocoding**: [Nominatim](https://nominatim.openstreetmap.org/)
-- **Map renderer**: [MapLibre](https://maplibre.org/)
-
-## User Interface
-
-![](./public/assets/screenshots/Web_UI.png)
-
-## Showcase
-
-All showcase images are stored in `public/assets/showcase/`.
-
-### Featured Examples
-
-<p align="center">
-  <img src="./public/assets/showcase/showcase_1.png" alt="Featured showcase example 1" width="100%" />
-  <img src="./public/assets/showcase/showcase_2.png" alt="Featured showcase example 2" width="100%" />
-</p>
+- Map data: [OpenStreetMap contributors](https://www.openstreetmap.org/copyright)
+- Tiles: [OpenMapTiles](https://openmaptiles.org/)
+- Tile hosting: [OpenFreeMap](https://openfreemap.org/)
+- Geocoding: [Nominatim](https://nominatim.openstreetmap.org/)
+- Map renderer: [MapLibre](https://maplibre.org/)
 
 ## Run
 
 ```bash
+git clone https://github.com/viankie090912-commits/1TomatoMap.git
+cd 1TomatoMap
 bun install
 bun run dev
 ```
@@ -78,68 +52,37 @@ Check [`.env.example`](./.env.example) for available variables. They are optiona
 bun run build
 ```
 
-## Deploy with Docker (Self-Hosting)
+## Deploy with Docker
 
-### 1) Build and run with Docker Compose
-
-Create `.env` from `.env.example` (or set `APP_PORT` directly in your shell), then run:
+### Build and run with Docker Compose
 
 ```bash
 docker compose up -d --build
 ```
 
-This serves the app on `http://localhost:7200` by default.
+The app serves on `http://localhost:7200` by default. Change `APP_PORT` in `.env` if needed.
 
-To change the exposed host port:
-
-- Linux/macOS:
-
-```bash
-APP_PORT=80 docker compose up -d --build
-```
-
-- PowerShell:
-
-```powershell
-$env:APP_PORT=80
-docker compose up -d --build
-```
-
-### 2) Stop the deployment
+### Stop the deployment
 
 ```bash
 docker compose down
 ```
 
-### 3) Optional: build and run without Compose
+### Build and run without Compose
 
 ```bash
-docker build -t terraink:latest .
-docker run -d --name terraink -p 7200:80 --restart unless-stopped terraink:latest
+docker build -t 1tomatomap:latest .
+docker run -d --name 1tomatomap -p 7200:80 --restart unless-stopped 1tomatomap:latest
 ```
 
 ## Contributing
 
-> The contribution guidelines are meant to keep TerraInk easy to extend, review, and maintain over time. They are here to support a durable architecture, not to add unnecessary friction.
-
-Read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a PR.
-
-- Branch from `dev` and target `dev` only. Do not open PRs against `main`.
-- Fill out the pull request template completely when you open a PR.
-- Keep contributions clean, modular, and aligned with the existing architecture.
-- Avoid hard-coded values when constants, configuration, or reusable abstractions are more appropriate.
-- AI-assisted coding is allowed, but submissions must be reviewed, refined, and intentionally engineered before review.
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=yousifamanuel/terraink&type=Date)](https://star-history.com/#yousifamanuel/terraink&Date)
+Read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a pull request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
 
-## Trademark
+## Upstream Trademark Notice
 
-The **Terraink™** name, logo, and branding assets are trademarks of the project owner.</br>
-The MIT license grants you the right to use the code, but it does **not** grant any rights to use the project's name or branding for your own commercial purposes or hosted services.</br>
-See [TRADEMARK.md](./TRADEMARK.md) for details.
+This project is based on Terraink, but it is not the official Terraink project and it does not reuse the Terraink or TerraInk names as its own brand. See [TRADEMARK.md](./TRADEMARK.md) for the upstream trademark notice.

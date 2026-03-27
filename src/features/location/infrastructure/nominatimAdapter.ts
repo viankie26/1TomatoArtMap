@@ -1,5 +1,6 @@
 import type { ICache } from "@/core/cache/ports";
 import type { IHttp } from "@/core/http/ports";
+import { translateStoredMessage } from "@/core/i18n/translate";
 import type { IGeocodePort } from "../domain/ports";
 import type { Location, SearchResult } from "../domain/types";
 import {
@@ -60,7 +61,7 @@ export function createNominatimAdapter(
   async function geocodeLocation(query: string): Promise<SearchResult> {
     const lookup = String(query ?? "").trim();
     if (!lookup) {
-      throw new Error("Location is required.");
+      throw new Error(translateStoredMessage("location.error.required"));
     }
 
     const cacheKey = getGeocodeCacheKey(lookup);
@@ -77,7 +78,9 @@ export function createNominatimAdapter(
 
     const results = await searchLocations(lookup, 1);
     if (results.length === 0) {
-      throw new Error(`No coordinates found for "${lookup}"`);
+      throw new Error(
+        translateStoredMessage("location.error.noCoordinates", { query: lookup }),
+      );
     }
 
     const first = results[0];
@@ -100,7 +103,7 @@ export function createNominatimAdapter(
 
   async function reverseGeocode(lat: number, lon: number): Promise<SearchResult> {
     if (!Number.isFinite(lat) || !Number.isFinite(lon)) {
-      throw new Error("Latitude and longitude are required.");
+      throw new Error(translateStoredMessage("location.error.latLonRequired"));
     }
 
     const cacheKey = getReverseGeocodeCacheKey(lat, lon);
@@ -126,7 +129,7 @@ export function createNominatimAdapter(
         const data = await response.json();
         const normalized = normalizeLocationResult(data);
         if (!normalized) {
-          throw new Error("No nearby city found for the selected coordinates.");
+          throw new Error(translateStoredMessage("location.error.noNearbyCity"));
         }
         cache.write(cacheKey, normalized);
         return normalized;

@@ -1,4 +1,4 @@
-# TerraInk — Agent Architecture Guide
+# 1TomatoMap — Agent Architecture Guide
 
 > **For any AI coding agent working on this codebase.**
 > Read this file fully before writing, editing, or deleting any code.
@@ -65,7 +65,7 @@ See `.env.example` for the full list of supported variables.
 
 ## Contribution and Documentation Rules
 
-- External pull requests must be opened against `dev`, never `main`.
+- External pull requests should target the repository's active development branch.
 - AI-assisted coding is allowed only when the result is reviewed, refined, and aligned with the project architecture.
 - Prefer standalone modules, components, hooks, constants, and utilities over hard-coded or tightly coupled implementations.
 - In Markdown files, do not place a horizontal rule (`---`) immediately before a heading line such as `#`, `##`, or `###`.

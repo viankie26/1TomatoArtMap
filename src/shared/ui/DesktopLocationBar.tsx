@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocale } from "@/core/i18n/LocaleContext";
 import { usePosterContext } from "@/features/poster/ui/PosterContext";
 import { useFormHandlers } from "@/features/poster/application/useFormHandlers";
 import { useLocationAutocomplete } from "@/features/location/application/useLocationAutocomplete";
@@ -10,6 +11,10 @@ import {
   PLACEHOLDER_EXAMPLE_LONGITUDE,
 } from "@/features/location/ui/constants";
 import type { SearchResult } from "@/features/location/domain/types";
+import {
+  getQuickCityGroups,
+  mapQuickCityToSearchResult,
+} from "@/features/location/domain/quickCities";
 import { MyLocationIcon, LocationIcon, SearchIcon } from "@/shared/ui/Icons";
 
 /**
@@ -19,6 +24,7 @@ import { MyLocationIcon, LocationIcon, SearchIcon } from "@/shared/ui/Icons";
  * Clicking the pin icon shows/hides the lat/lon coordinate fields.
  */
 export default function DesktopLocationBar() {
+  const { locale, t } = useLocale();
   const { state } = usePosterContext();
   const {
     handleChange,
@@ -35,10 +41,12 @@ export default function DesktopLocationBar() {
     useCurrentLocation(flyToLocation);
 
   const [showCoords, setShowCoords] = useState(false);
+  const [quickCitiesOpen, setQuickCitiesOpen] = useState(false);
 
   const hasLocationValue = state.form.location.trim().length > 0;
   const showLocationSuggestions =
     state.isLocationFocused && locationSuggestions.length > 0;
+  const quickCityGroups = getQuickCityGroups(locale);
 
   const onLocationSelect = (location: SearchResult) => {
     handleLocationSelectBase(location);
@@ -62,15 +70,20 @@ export default function DesktopLocationBar() {
                   onChange={handleChange}
                   onFocus={() => setLocationFocused(true)}
                   onBlur={() => setLocationFocused(false)}
-                  onKeyDown={(e) => { if (e.key === "Enter") void searchNow(e.currentTarget.value); }}
-                  placeholder={PLACEHOLDER_LOCATION_SEARCH}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") void searchNow(e.currentTarget.value);
+                  }}
+                  placeholder={
+                    t("location.placeholder.search") ||
+                    PLACEHOLDER_LOCATION_SEARCH
+                  }
                   autoComplete="off"
                 />
                 {hasLocationValue ? (
                   <button
                     type="button"
                     className="location-clear-btn"
-                    aria-label="Clear location"
+                    aria-label={t("location.clear")}
                     onMouseDown={(e) => e.preventDefault()}
                     onClick={handleClearLocation}
                   >
@@ -87,8 +100,8 @@ export default function DesktopLocationBar() {
               onMouseDown={(e) => e.preventDefault()}
               onClick={handleUseCurrentLocation}
               disabled={isLocatingUser}
-              aria-label="Use current location"
-              title="Use current location"
+              aria-label={t("location.useCurrent")}
+              title={t("location.useCurrent")}
             >
               <MyLocationIcon className="location-current-icon" />
             </button>
@@ -97,12 +110,54 @@ export default function DesktopLocationBar() {
               className={`icon-only-btn location-row-icon-btn${showCoords ? " is-active" : ""}`}
               onMouseDown={(e) => e.preventDefault()}
               onClick={() => setShowCoords((v) => !v)}
-              aria-label="Toggle coordinate fields"
-              title="Show/hide lat & lon"
+              aria-label={t("location.toggleCoordinates")}
+              title={t("location.toggleCoordinatesTitle")}
             >
               <LocationIcon />
             </button>
             </div>
+          </div>
+
+          <div className="location-quick-cities">
+            <button
+              type="button"
+              className={`location-quick-cities__trigger${quickCitiesOpen ? " is-open" : ""}`}
+              onClick={() => setQuickCitiesOpen((open) => !open)}
+              aria-expanded={quickCitiesOpen}
+            >
+              {t("location.quickCitiesTrigger")}
+            </button>
+            {quickCitiesOpen ? (
+              <div className="location-quick-cities__panel">
+                {quickCityGroups.map((group) => (
+                  <section
+                    key={group.id}
+                    className="location-quick-cities__group"
+                    aria-label={group.label}
+                  >
+                    <h3 className="location-quick-cities__group-title">
+                      {group.label}
+                    </h3>
+                    <div className="location-quick-cities__grid">
+                      {group.cities.map((city) => (
+                        <button
+                          key={city.id}
+                          type="button"
+                          className="location-quick-cities__city"
+                          onMouseDown={(e) => e.preventDefault()}
+                          onClick={() => {
+                            onLocationSelect(mapQuickCityToSearchResult(city));
+                            setQuickCitiesOpen(false);
+                          }}
+                        >
+                          {city.city}
+                        </button>
+                      ))}
+                    </div>
+                  </section>
+                ))}
+              </div>
+            ) : null}
           </div>
 
           {showLocationSuggestions ? (
@@ -122,7 +177,7 @@ export default function DesktopLocationBar() {
                 </li>
               ))}
               {isLocationSearching ? (
-                <li className="location-suggestion-status">Searching...</li>
+                <li className="location-suggestion-status">{t("location.searching")}</li>
               ) : null}
             </ul>
           ) : null}
@@ -134,23 +189,23 @@ export default function DesktopLocationBar() {
 
         <div className="dsk-loc-coords">
           <label>
-            Latitude
+            {t("markers.latitude")}
             <input
               className="form-control-tall"
               name="latitude"
               value={state.form.latitude}
               onChange={handleChange}
-              placeholder={PLACEHOLDER_EXAMPLE_LATITUDE}
+              placeholder={t("location.placeholder.latitude")}
             />
           </label>
           <label>
-            Longitude
+            {t("markers.longitude")}
             <input
               className="form-control-tall"
               name="longitude"
               value={state.form.longitude}
               onChange={handleChange}
-              placeholder={PLACEHOLDER_EXAMPLE_LONGITUDE}
+              placeholder={t("location.placeholder.longitude")}
             />
           </label>
         </div>
