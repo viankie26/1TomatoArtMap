@@ -3,9 +3,9 @@
 [![Repository](https://img.shields.io/badge/GitHub-1TomatoMap-24292f?logo=github)](https://github.com/viankie26/1TomatoMap)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 
-1TomatoMap is an independent open-source map poster studio for building clean, customizable city map posters in the browser.
+1TomatoMap is an independent open-source map poster studio for building clean, customizable city map posters in the browser, with a bilingual workflow optimized to make the experience easier for Chinese users.
 
-1TomatoMap 是一个独立开源的地图海报工作室，专注于在浏览器中生成简洁、可定制的城市地图海报。
+1TomatoMap 是一个独立开源的地图海报工作室，专注于在浏览器中生成简洁、可定制的城市地图海报，并通过双语体验和中文优化，让中文用户使用起来更直接、更方便。
 
 Repository: [viankie26/1TomatoMap](https://github.com/viankie26/1TomatoMap)
 
