@@ -7,14 +7,9 @@ import { useCurrentLocation } from "@/features/location/application/useCurrentLo
 import { useMapSync } from "@/features/map/application/useMapSync";
 import {
   PLACEHOLDER_LOCATION_SEARCH,
-  PLACEHOLDER_EXAMPLE_LATITUDE,
-  PLACEHOLDER_EXAMPLE_LONGITUDE,
 } from "@/features/location/ui/constants";
 import type { SearchResult } from "@/features/location/domain/types";
-import {
-  getQuickCityGroups,
-  mapQuickCityToSearchResult,
-} from "@/features/location/domain/quickCities";
+import QuickCitiesPicker from "@/features/location/ui/QuickCitiesPicker";
 import { MyLocationIcon, LocationIcon, SearchIcon } from "@/shared/ui/Icons";
 
 /**
@@ -24,7 +19,7 @@ import { MyLocationIcon, LocationIcon, SearchIcon } from "@/shared/ui/Icons";
  * Clicking the pin icon shows/hides the lat/lon coordinate fields.
  */
 export default function DesktopLocationBar() {
-  const { locale, t } = useLocale();
+  const { t } = useLocale();
   const { state } = usePosterContext();
   const {
     handleChange,
@@ -41,12 +36,9 @@ export default function DesktopLocationBar() {
     useCurrentLocation(flyToLocation);
 
   const [showCoords, setShowCoords] = useState(false);
-  const [quickCitiesOpen, setQuickCitiesOpen] = useState(false);
-
   const hasLocationValue = state.form.location.trim().length > 0;
   const showLocationSuggestions =
     state.isLocationFocused && locationSuggestions.length > 0;
-  const quickCityGroups = getQuickCityGroups(locale);
 
   const onLocationSelect = (location: SearchResult) => {
     handleLocationSelectBase(location);
@@ -118,47 +110,7 @@ export default function DesktopLocationBar() {
             </div>
           </div>
 
-          <div className="location-quick-cities">
-            <button
-              type="button"
-              className={`location-quick-cities__trigger${quickCitiesOpen ? " is-open" : ""}`}
-              onClick={() => setQuickCitiesOpen((open) => !open)}
-              aria-expanded={quickCitiesOpen}
-            >
-              {t("location.quickCitiesTrigger")}
-            </button>
-            {quickCitiesOpen ? (
-              <div className="location-quick-cities__panel">
-                {quickCityGroups.map((group) => (
-                  <section
-                    key={group.id}
-                    className="location-quick-cities__group"
-                    aria-label={group.label}
-                  >
-                    <h3 className="location-quick-cities__group-title">
-                      {group.label}
-                    </h3>
-                    <div className="location-quick-cities__grid">
-                      {group.cities.map((city) => (
-                        <button
-                          key={city.id}
-                          type="button"
-                          className="location-quick-cities__city"
-                          onMouseDown={(e) => e.preventDefault()}
-                          onClick={() => {
-                            onLocationSelect(mapQuickCityToSearchResult(city));
-                            setQuickCitiesOpen(false);
-                          }}
-                        >
-                          {city.city}
-                        </button>
-                      ))}
-                    </div>
-                  </section>
-                ))}
-              </div>
-            ) : null}
-          </div>
+          <QuickCitiesPicker onSelect={onLocationSelect} />
 
           {showLocationSuggestions ? (
             <ul className="location-suggestions" role="listbox">

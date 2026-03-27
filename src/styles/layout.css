@@ -665,6 +665,11 @@ button.install-prompt-dismiss:hover {
   height: 17px;
 }
 
+.startup-location-card .location-quick-cities {
+  margin-top: 12px;
+  margin-bottom: 2px;
+}
+
 .startup-location-action--confirm {
   background: linear-gradient(135deg, #1a6f8c, #2f8eaf);
   color: #f4fbff;

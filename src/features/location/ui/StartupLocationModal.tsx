@@ -14,6 +14,7 @@ import {
   getGeolocationFailureMessage,
   requestCurrentPositionWithRetry,
 } from "@/features/location/infrastructure";
+import QuickCitiesPicker from "@/features/location/ui/QuickCitiesPicker";
 import { MyLocationIcon } from "@/shared/ui/Icons";
 import { usePosterContext } from "@/features/poster/ui/PosterContext";
 import { useLocationAutocomplete } from "@/features/location/application/useLocationAutocomplete";
@@ -289,6 +290,10 @@ export default function StartupLocationModal({
           <MyLocationIcon />
           <span>{isResolving ? t("startup.locating") : t("startup.getMyLocation")}</span>
         </button>
+        <QuickCitiesPicker
+          groupIds={["global"]}
+          onSelect={onSuggestionSelect}
+        />
         <button
           type="button"
           className="startup-location-action startup-location-action--confirm"

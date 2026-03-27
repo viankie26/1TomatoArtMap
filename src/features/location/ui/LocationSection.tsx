@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { SearchResult } from "../domain/types";
 import type { PosterForm } from "@/features/poster/application/posterReducer";
 import {
@@ -8,10 +7,7 @@ import {
 } from "./constants";
 import { MyLocationIcon } from "@/shared/ui/Icons";
 import { useLocale } from "@/core/i18n/LocaleContext";
-import {
-  getQuickCityGroups,
-  mapQuickCityToSearchResult,
-} from "@/features/location/domain/quickCities";
+import QuickCitiesPicker from "@/features/location/ui/QuickCitiesPicker";
 
 interface LocationSectionProps {
   form: PosterForm;
@@ -44,10 +40,8 @@ export default function LocationSection({
   isLocatingUser,
   locationPermissionMessage,
 }: LocationSectionProps) {
-  const { locale, t } = useLocale();
+  const { t } = useLocale();
   const hasLocationValue = form.location.trim().length > 0;
-  const [quickCitiesOpen, setQuickCitiesOpen] = useState(false);
-  const quickCityGroups = getQuickCityGroups(locale);
 
   return (
     <section className="panel-block">
@@ -96,47 +90,7 @@ export default function LocationSection({
               <MyLocationIcon />
             </button>
           </div>
-          <div className="location-quick-cities">
-            <button
-              type="button"
-              className={`location-quick-cities__trigger${quickCitiesOpen ? " is-open" : ""}`}
-              onClick={() => setQuickCitiesOpen((open) => !open)}
-              aria-expanded={quickCitiesOpen}
-            >
-              {t("location.quickCitiesTrigger")}
-            </button>
-            {quickCitiesOpen ? (
-              <div className="location-quick-cities__panel">
-                {quickCityGroups.map((group) => (
-                  <section
-                    key={group.id}
-                    className="location-quick-cities__group"
-                    aria-label={group.label}
-                  >
-                    <h3 className="location-quick-cities__group-title">
-                      {group.label}
-                    </h3>
-                    <div className="location-quick-cities__grid">
-                      {group.cities.map((city) => (
-                        <button
-                          key={city.id}
-                          type="button"
-                          className="location-quick-cities__city"
-                          onMouseDown={(event) => event.preventDefault()}
-                          onClick={() => {
-                            onLocationSelect(mapQuickCityToSearchResult(city));
-                            setQuickCitiesOpen(false);
-                          }}
-                        >
-                          {city.city}
-                        </button>
-                      ))}
-                    </div>
-                  </section>
-                ))}
-              </div>
-            ) : null}
-          </div>
+          <QuickCitiesPicker onSelect={onLocationSelect} />
           {showLocationSuggestions ? (
             <ul className="location-suggestions" role="listbox">
               {locationSuggestions.map((suggestion) => (
